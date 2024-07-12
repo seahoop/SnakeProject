@@ -30,11 +30,14 @@ The game will start when user press on any four keys ```Up, Down, Left, Right```
 ### Proposed sketch of when player lost the game block
 ![some alt text](https://i.postimg.cc/63bPg96L/3651720804469-pic.jpg)
 
-1.
+### Proposed sketch of Full view when player win
 ![some al text](https://i.postimg.cc/KY2hDv41/3611720804440-pic.jpg)
-2.
+
+### Proposed sketch of Full view of start screen 
 ![some alt text](https://i.postimg.cc/D0m9wSpM/3621720804445-pic.jpg)
-3.
+
+
+### Proposed sketch of Full view when player lose
 ![some alt text](https://i.postimg.cc/6qSD2BD5/3631720804447-pic.jpg)
 
 
