@@ -52,7 +52,11 @@ The game will start when user press on any three keys ```Up, Left, Right```. Sim
 6. As a player, I want the snake to move continouously till I press another command. 
 7. As a player, I want when an apple is eaten an new apple will randomly generate in another block of the arena. 
 8. the snake can not move back ward only forward, left and right. 
-
+## Stretch Goals
+1. Remember the highest 3 scores, and show it on the side of the game. And rank it in order. 
+2. Change the fruit to other items monkey, elephant, knife, computer emoji. 
+3. Can change background color from light mode to dark mode.
+4. Switch snake to other animals above 10 unit in length to dog, above 20 to elephant, above 30 to crocodile, and 40 and above to lions head.  
 
 
 
@@ -88,6 +92,29 @@ The game will start when user press on any three keys ```Up, Left, Right```. Sim
 1. When snake hit an wall ```You Have Lost``` block shows up, game pause snake length shows when it hit the wall, and restart button shows up. 
 2. When the snake fill all 20*20 ```You have won``` block show up, game pause, length shows, and restart button shows up. 
 3. when the snake collide with own body ```You Have Lost``` block shows up, game pause snake length shows when it hit the wall, and restart button shows up. 
+
+
+# Self Paced Schedule(june 22nd due date )
+## June 13 Friday 
+- Finish planning or README.md file 
+
+## June 14, 15 
+- Finish html and css structure (use Grid)
+ 
+## June 16
+- Start scaffolding the javscript
+
+## june 17, 18, 19 
+- Add in functionalities and test functionalities. 
+
+## June 20
+- Test out functionalities and find bugs, and fix them 
+
+## June 21
+- Deploy game and test out all aspect of the game, then fix all final bugs. 
+
+## June 22 
+- Ready for Presentation
 
 
 
