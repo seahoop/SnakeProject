@@ -2,11 +2,11 @@
 Snake Project 
 
 # Project Description
-The Snake Game is an exciting web game controlled by four keys on end users keyboard ```Up, Left, Right```. The Game features an extendible Snake starting at default as 4 blocks, the Snake will be caged in an square shaped arena which the size will be 20*20(refer to example below)
+The Snake Game is an exciting web game controlled by three keys on end users keyboard ```Up, Left, Right```. The Game features an extendible Snake starting at default as 4 blocks, the Snake will be caged in an square shaped arena which the size will be 20*20(refer to example below)
 
 ![some alt text](https://i.postimg.cc/jSpXmDrh/Screenshot-2024-07-12-at-11-53-02-AM.png)
 
-The game will start when user press on any four keys ```Up, Left, Right```. Simultananeously the program will execute the pre-programmed action, which start randomly showing apple in random blocks one at an time. The end user will try to use ```Up, Left, Right``` to direct the snake to eat the apple. When succesfully comeplete the action of going through an apple, the apple will automatically dissapear and the snake will become one block longer. The user wins when all 20*20 arena is occupied by the Snakes Body, if the snake's head run into any part of the wall on each side of the arena. The user loses the Game and the game reset. 
+The game will start when user press on any three keys ```Up, Left, Right```. Simultananeously the program will execute the pre-programmed action, which start randomly showing apple in random blocks one at an time. The end user will try to use ```Up, Left, Right``` to direct the snake to eat the apple. When succesfully comeplete the action of going through an apple, the apple will automatically dissapear and the snake will become one block longer. The user wins when all 20*20 arena is occupied by the Snakes Body, if the snake's head run into any part of the wall on each side of the arena. The user loses the Game and the game reset. 
 
 
 # File Structure Of the Proposed Project 
@@ -62,16 +62,23 @@ The game will start when user press on any four keys ```Up, Left, Right```. Simu
 ### Start Button and Start Block dissapear, actions before game start
 1. When startButton clicked->Start Block Dissapear->The snake shows at its default position(this position should be the same everytime)->apple should be randomly generated in the arena-> only snake and randomly generated apple shown in the arena waiting for action when player click on one of the buttons ```up, left, right```.
 
-### Game start command 
-1. When player click on one of the command ```up, left, right``` -- the game began and snake start moving forward at an constant speed(adjust accordingly)
+### Game start command, snake moving commands
+1. When player click on one of the command ```up, left, right``` -- the game began and snake start moving forward at an constant speed(adjust accordingly) --the snake moves at constant speed till further commands
 
 ### up, right,left command
 1. when ```up``` pressed the snake move towards north, when ```left``` pressed the snake move toward west, when ```right```pressed the snake move toward east. 
 2. When command is given, the snake shall move to that direction immediately, so when command given-snake move to the direction given in the same block. 
 
-### Apple randomly generate when game begans, snake extend length
+### Apple randomly generate when game begans, snake extend lengt, length track 
 1. When snake go through an apple - apple dissapear - immediately newly generated apple shows up at random location in arena
-2. Each apple snake eat, one block length of snake body extend until 400 blocks or fill all 20 * 20 arena. Extended snake body go behind exisiting blocks, and follows it at same speed. 
+2. Each apple snake eat, one block length of snake body extend until 400 blocks or fill all 20 * 20 arena. Extended snake body go behind exisiting blocks, and follows it at same speed.
+3. Snake's length will be tracked
+
+
+
+### when snake hit an wall, when player win
+1. When snake hit an wall ```You Have Lost``` block shows up, game pause snake length shows when it hit the wall, and restart button shows up. 
+2. When the snake fill all 20*20 ```You have won``` block show up, game pause, length shows, and restart button shows up. 
 
 
 
