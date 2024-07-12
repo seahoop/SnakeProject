@@ -43,12 +43,21 @@ The game will start when user press on any four keys ```Up, Down, Left, Right```
 
 
 
-## User Stories
+# User Stories
+1. As a player, when I press ```Up, Down, Left, Right``` Keys I want the snake's head to turn to that direction immediately. 
+2. As a player, when I enter the game URL and gets directed to the game.  I want their to be clear direction/button to click so I can start the game. 
+3. As a player, if I direct the snake into any side of the wall in the arena, I want to be told that I have lost the game and show me how long or how many blocks my snake has grown to. I also want their to be an restart button for me to restart immediately.  
+4. As a player, if I win the game I want to be told that I have win the game and the game pause immediately. After the pause I want to be told how many blocks my snake has grown to. 
+5. As a player, when I press the start button I want the snake to be at an defuault position with four blocks in length and the first apple randomly appear in the 20*20 arena. 
+6. As a player, I want the snake to move continouously till I press another command. 
+7. As a player, I want when an apple is eaten an new apple will randomly generate in another block of the arena. 
 
 
 
 
-## Pseudocode
+
+
+# Pseudocode
 
 
 
