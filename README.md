@@ -59,8 +59,16 @@ The game will start when user press on any three keys ```Up, Left, Right```. Sim
 
 
 # Pseudocode
+
+### Global Variables 
+1. Arena Size = 20*20
+2. Defaulst-snake-length= 4
+3. apple position random x, and random y 
+4. score = 0
+
+
 ### Start Button and Start Block dissapear, actions before game start
-1. When startButton clicked->Start Block Dissapear->The snake shows at its default position(this position should be the same everytime)->apple should be randomly generated in the arena-> only snake and randomly generated apple shown in the arena waiting for action when player click on one of the buttons ```up, left, right```.
+1. When startButton clicked->Start Block Dissapear->The snake created at its default position(this position should be the same everytime)->apple should be randomly generated in the arena-> only snake and randomly generated apple shown in the arena waiting for action when player click on one of the buttons ```up, left, right```.
 
 ### Game start command, snake moving commands
 1. When player click on one of the command ```up, left, right``` -- the game began and snake start moving forward at an constant speed(adjust accordingly) --the snake moves at constant speed till further commands
@@ -76,9 +84,10 @@ The game will start when user press on any three keys ```Up, Left, Right```. Sim
 
 
 
-### when snake hit an wall, when player win
+### when snake hit an wall, when player win, when collide with body 
 1. When snake hit an wall ```You Have Lost``` block shows up, game pause snake length shows when it hit the wall, and restart button shows up. 
 2. When the snake fill all 20*20 ```You have won``` block show up, game pause, length shows, and restart button shows up. 
+3. when the snake collide with own body ```You Have Lost``` block shows up, game pause snake length shows when it hit the wall, and restart button shows up. 
 
 
 
