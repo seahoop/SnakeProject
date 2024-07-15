@@ -96,10 +96,10 @@ The game will start when user press on any four keys ```Up, down, Left, Right```
 
 
 # Self Paced Schedule(june 22nd due date )
-## June 13 Friday 
+## July 13 Friday 
 - Finish planning or README.md file 
 
-## June 14, 15 
+## July 14, 15 
 - Finish html and css structure (use Grid),also start on javascript
 - JavaScript: figure out up, down, left, right and how the snake will move with it.
 - html: set up all tags, and proposed wording in the game.
@@ -107,31 +107,31 @@ The game will start when user press on any four keys ```Up, down, Left, Right```
 - apple object randomly generate inside the arena.
 
  
-## June 16
+## July 16
 - Start scaffolding the javscript
 - specifically the functionalities of things such as began game, end game, restart button. 
 - figure out snake length traking system. 
 - snake length add when eat one object 
 
-## june 17 (Will start deployment on wednesday/17th. )
+## july 17 (Will start deployment on wednesday/17th. )
 - Add in functionalities and test functionalities. 
 - Block the snake going from outside of the arena 
 - When snake hit any side of the wall user loses. 
 
-## june 18, 19
+## july 18, 19
 -  Switch snake to other animals above 10 unit in length to dog, above 20 to elephant, above 30 to crocodile, and 40 and above to lions head.
 - randomly generate fruit from apple to other items such as monkey, elephant, knife, etc...
 
-## June 20(theres an module in canvas to use)
+## July 20(theres an module in canvas to use)
 - Test out functionalities and find bugs, and fix them 
 - change background color button press once change to light mode press again change to dark mode. 
 - add musics to the game when you lose, and when you win, also when game is played. 
 
-## June 21
+## July 21
 - Deploy game and test out all aspect of the game, then fix all final bugs. 
 - Remember the highest 3 scores, and show it on the side of the game. And rank it in order. (search into Local storage)
 
-## June 22 
+## July 22 
 - Ready for Presentation
 
 
