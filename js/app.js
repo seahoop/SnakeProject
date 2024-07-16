@@ -2,12 +2,12 @@ const cvs = document.getElementById("canvas");
 const ctx = cvs.getContext("2d");
 
 // Grid for the Arena got the cvs.height/scale from google
-const scale = 20;
+const scale = 40;
 const rows = cvs.height/scale;
 const columns = cvs.width/scale;
 
 //Game win and lose notices
-let gameState;
+let gameProgress;
 const startMenu = document.getElementById("start-menu");
 const gameOverMenu = document.getElementById("game-over");
 
@@ -18,15 +18,16 @@ let fruit;
 
 
 //Game progress gameover menu
-function setState(state){
-    gameState = state;
-    if(state === "gameover"){
+function setState(progress){
+    gameProgress = progress;
+    if(progress === "gameover"){
         gameOverMenu.style.visibility = "visible";
-    } else if (state === "play"){
+        document.getElementById("snake-length").innerText = snake.tail.length;
+    } else if (progress === "play"){
         gameOverMenu.style.visibility = "hidden"
-    }   if (state === "start"){
+    }   if (progress === "start"){
         startMenu.style.visibility = "visible"
-    }   else if (state !== "start"){
+    }   else if (progress !== "start"){
         startMenu.style.visibility = "hidden"
     }
     }
@@ -55,7 +56,7 @@ function Snake(){
     this.totalFruit = 0;
     this.tail =[];
 
-    //design of snake 
+    //design of snake chat gpt generated design the snake out 
     this.draw = function() {
         for (let i = 0; i < this.tail.length; i++) {
             ctx.fillRect(this.tail[i].x, this.tail[i].y, scale, scale);
@@ -65,7 +66,7 @@ function Snake(){
         ctx.fillStyle = "#5300E2";
     };
 
- //snake position
+ //snake position chat gpt generated net 9 lines of code. 
  this.update = function(){
     for(let i=0; i<this.tail.length-1; i++){
         this.tail[i]=this.tail[i+1];

@@ -8,7 +8,7 @@
 
 body{
     height: 100vh;
-    background-color: black;
+    background-image: url(https://i.postimg.cc/7PWZJH02/3553339.jpg);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,11 +16,19 @@ body{
 
 }
 
-h1{
-    color: white;
+#topic{
+   
+    color: #0034f0;
+    font-family: "Orbitron", sans-serif;
+    text-align: center;
     letter-spacing: 9px;
-    font-size: 3rem;
+    font-size: 2rem;
 
+    background-color: rgb(0, 186, 180);
+    height: 200px;
+    width: 400px;
+    border: rgb(3, 172, 169) solid 9px;
+    border-radius: 3px;
 }
 
 canvas{
@@ -38,7 +46,11 @@ canvas{
     position: absolute;
     text-align: center;
     letter-spacing: 3px;
-    color: gray;
+    font-size: 2rem;
+    background-color: black;
+    color: white;
+    width: 400px;
+    height: 200px;
 }
 /*chat gpt 6line below*/
 #game-over{
