@@ -2,12 +2,12 @@ const cvs = document.getElementById("canvas");
 const ctx = cvs.getContext("2d");
 
 // Grid for the Arena got the cvs.height/scale from google
-const scale = 40;
+const scale = 20 ;
 const rows = cvs.height/scale;
 const columns = cvs.width/scale;
 
 //Game win and lose notices
-let gameProgress;
+let gameState;
 const startMenu = document.getElementById("start-menu");
 const gameOverMenu = document.getElementById("game-over");
 
@@ -16,23 +16,21 @@ const gameOverMenu = document.getElementById("game-over");
 let snake;
 let fruit; 
 
-
 //Game progress gameover menu
-function setState(progress){
-    gameProgress = progress;
-    if(progress === "gameover"){
+function setState(state){
+    gameState = state;
+    if(state === "gameover"){
         gameOverMenu.style.visibility = "visible";
-        document.getElementById("snake-length").innerText = snake.tail.length;
-    } else if (progress === "play"){
-        gameOverMenu.style.visibility = "hidden"
-    }   if (progress === "start"){
-        startMenu.style.visibility = "visible"
-    }   else if (progress !== "start"){
-        startMenu.style.visibility = "hidden"
-    }
-    }
+        document.getElementById("snake-length").innerText = snake.totalFruit -4;
+    } else if (state === "play"){
+        gameOverMenu.style.visibility = "hidden";
+    }   if (state === "start"){
+        startMenu.style.visibility = "visible";
 
-
+    }   else if (state !== "start"){
+        startMenu.style.visibility = "hidden";
+     
+} }
 
 
 
@@ -41,11 +39,10 @@ function setState(progress){
 function restart(){
     snake.x = 240;
     snake.y = 220;
-    snake.totalFruit = 0;
-    snake.tail =[];
-    gameOverMenu.style.visibility = "hidden";
-    setState("play")
-    startTune.play();
+    snake.totalFruit = 4;
+    snake.tail = Array(snake.totalFruit).fill({x: snake.x, y: snake.y});
+    setState("play");
+   
 }
 function Snake(){
 
@@ -53,8 +50,8 @@ function Snake(){
     this.y = 0;
     this.xSpeed = scale*1;
     this.ySpeed = 0;
-    this.totalFruit = 0;
-    this.tail =[];
+    this.totalFruit = 4;
+    this.tail =Array(this.totalFruit).fill({x: this.x, y: this.y});
 
     //design of snake chat gpt generated design the snake out 
     this.draw = function() {
@@ -77,22 +74,11 @@ function Snake(){
     this.x += this.xSpeed;
     this.y += this.ySpeed;
 
-    if(this.x>cvs.width){
-        setState("gameover")
-    }
-    if(this.x<0){
-        setState("gameover")
-    }
-    if(this.y>cvs.height){
-        setState("gameover")
-    }
-    if(this.y<0){
-        setState("gameover")
-    }
+    if(this.x >= cvs.width || this.x <0 || this.y >= cvs.height || this.y < 0){
+        setState("gameover");
+    }};
 
-
-
-    }
+    
     //Key direction programming 
     this.changeDirection = function(direction){
         switch(direction){
@@ -140,6 +126,7 @@ function Snake(){
                 setState("gameover"); 
             }
         }
+
     };
 
 }
@@ -171,6 +158,8 @@ this.draw = function() {
 
     fruit.randomLocation();
 
+    setState("start");
+
     let speed = window.setInterval(() =>{
         if (gameState === "play"){
             ctx.clearRect(0, 0, cvs.width, cvs.height);
@@ -183,22 +172,25 @@ this.draw = function() {
             fruitPop.play();
         }
         snake.checkForCollision();
-        document.querySelector("#score").innerText =snake.totalFruit;
+        document.querySelector("#score").innerText =snake.totalFruit- 4;
     }, 180);
     //snake is created moved and cleard every 180 
     }());
-
+    
      //Control
      document.body.onkeyup = function(e){
         if(e.keyCode == 32){
             restart();
         }
-    }
+    };
 
     window.addEventListener("keydown", ((e) =>{
         const direction = e.key.replace("Arrow", "");
         snake.changeDirection(direction);
     }));
+
+  
+
 
 
 
