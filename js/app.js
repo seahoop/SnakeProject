@@ -21,14 +21,15 @@ function setState(state){
     gameState = state;
     if(state === "gameover"){
         gameOverMenu.style.visibility = "visible";
+        startMenu.style.visibility = "hidden";
         document.getElementById("snake-length").innerText = snake.totalFruit -4;
     } else if (state === "play"){
         gameOverMenu.style.visibility = "hidden";
-    }   if (state === "start"){
-        startMenu.style.visibility = "visible";
-
-    }   else if (state !== "start"){
         startMenu.style.visibility = "hidden";
+
+    }   else if (state === "start"){
+        startMenu.style.visibility = "visible";
+        gameOverMenu.style.visibility = "hidden";
      
 } }
 
@@ -40,7 +41,10 @@ function restart(){
     snake.x = 240;
     snake.y = 220;
     snake.totalFruit = 4;
-    snake.tail = Array(snake.totalFruit).fill({x: snake.x, y: snake.y});
+    snake.tail = [];
+    for (let i = 0; i< snake.totalFruit; i++){
+        snake.tail.push({ x: snake.x - i * scale, y: snake.y});
+    }
     setState("play");
    
 }
@@ -113,13 +117,13 @@ function Snake(){
     this.eat = function(fruit) {
         if (this.x === fruit.x && this.y === fruit.y) {
         this.totalFruit++;
-            return true;
+            return true; 
         }
         return false;
     };
     // IF SNAKE COLLIDES WITH ITSELF
     this.checkForCollision = function() {
-        for (var i=0; i < this.tail.length; i++) {
+        for (var i=0; i < this.tail.length - 4; i++) {
             if(this.x === this.tail[i].x && this.y === this.tail[i].y) {
                 this.totalFruit = 0;
                 this.tail = [];
