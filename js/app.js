@@ -15,6 +15,7 @@ const gameOverMenu = document.getElementById("game-over");
 //variable declaration
 let snake;
 let fruit; 
+let score;
 
 //Game progress gameover menu
 function setState(state){
@@ -22,7 +23,7 @@ function setState(state){
     if(state === "gameover"){
         gameOverMenu.style.visibility = "visible";
         startMenu.style.visibility = "hidden";
-        document.getElementById("snake-length").innerText = snake.totalFruit -4;
+        document.getElementById("snake-length").innerText = score;
     } else if (state === "play"){
         gameOverMenu.style.visibility = "hidden";
         startMenu.style.visibility = "hidden";
@@ -117,7 +118,10 @@ function Snake(){
     this.eat = function(fruit) {
         if (this.x === fruit.x && this.y === fruit.y) {
         this.totalFruit++;
+        //this.tail.push({x; this.x, y: this.y});
+        score++ ;
             return true; 
+            
         }
         return false;
     };
@@ -176,7 +180,7 @@ this.draw = function() {
             fruitPop.play();
         }
         snake.checkForCollision();
-        document.querySelector("#score").innerText =snake.totalFruit- 4;
+        document.querySelector("#score").innerText = score;
     }, 180);
     //snake is created moved and cleard every 180 
     }());
