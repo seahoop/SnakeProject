@@ -12,7 +12,8 @@ const startMenu = document.getElementById("start-menu");
 const gameOverMenu = document.getElementById("game-over");
 const gameMusicWhenPlaying = document.getElementById("game-music-while-playing");
 const gameMusicWhenDie = document.getElementById("game-music-when-die");
-
+gameMusicWhenDie.volume = 1.0;
+gameMusicWhenPlaying.volume = 0.6;
 //variable declaration
 let snake;
 let fruit; 
@@ -23,9 +24,12 @@ function setState(state){
     gameState = state;
     if(state === "gameover"){
         gameMusicWhenPlaying.pause();
-        gameMusicWhenDie.pause();
         gameOverMenu.style.visibility = "visible";
         startMenu.style.visibility = "hidden";
+        if (!gameMusicWhenDie.paused){
+            gameMusicWhenDie.currentTime = 0;
+        }
+        gameMusicWhenDie.play();
         
         document.getElementById("snake-length").innerText = snake.totalFruit - 2;
     } else if (state === "play"){
@@ -38,7 +42,7 @@ function setState(state){
         startMenu.style.visibility = "visible";
         gameOverMenu.style.visibility = "hidden";
         gameMusicWhenPlaying.pause();
-        gameMusicWhenDie.play();
+        gameMusicWhenDie.pause();
      
 } }
 
@@ -56,6 +60,8 @@ function restart(){
     for (let i = 0; i< snake.totalFruit; i++){
         snake.tail.push({ x: snake.x - i * scale, y: snake.y});
     }
+    gameMusicWhenDie.pause();
+    gameMusicWhenDie.currentTime = 0;
     setState("play");
    
 }
