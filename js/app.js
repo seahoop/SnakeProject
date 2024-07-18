@@ -23,7 +23,7 @@ function setState(state){
     if(state === "gameover"){
         gameOverMenu.style.visibility = "visible";
         startMenu.style.visibility = "hidden";
-        document.getElementById("snake-length").innerText = score;
+        document.getElementById("snake-length").innerText = snake.totalFruit - 4;
     } else if (state === "play"){
         gameOverMenu.style.visibility = "hidden";
         startMenu.style.visibility = "hidden";
@@ -127,10 +127,9 @@ function Snake(){
     };
     // IF SNAKE COLLIDES WITH ITSELF
     this.checkForCollision = function() {
-        for (var i=0; i < this.tail.length - 4; i++) {
+        for (var i=0; i < this.tail.length -4; i++) {
             if(this.x === this.tail[i].x && this.y === this.tail[i].y) {
-                this.totalFruit = 0;
-                this.tail = [];
+                
                 setState("gameover"); 
             }
         }
@@ -180,7 +179,7 @@ this.draw = function() {
             fruitPop.play();
         }
         snake.checkForCollision();
-        document.querySelector("#score").innerText = score;
+        document.querySelector("#score").innerText = snake.totalFruit- 4;
     }, 180);
     //snake is created moved and cleard every 180 
     }());
