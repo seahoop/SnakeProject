@@ -26,8 +26,8 @@ function setState(state){
         gameMusicWhenPlaying.pause();
         gameOverMenu.style.visibility = "visible";
         startMenu.style.visibility = "hidden";
-        if (!gameMusicWhenDie.paused){
-            gameMusicWhenDie.currentTime = 0;
+         if (!gameMusicWhenDie.paused){
+             gameMusicWhenDie.currentTime = 0;
         }
         gameMusicWhenDie.play();
         
@@ -55,7 +55,7 @@ function setState(state){
 function restart(){
     snake.x = 240;
     snake.y = 220;
-    snake.totalFruit = 2;
+    snake.totalFruit = 20;
     snake.tail = [];
     for (let i = 0; i< snake.totalFruit; i++){
         snake.tail.push({ x: snake.x - i * scale, y: snake.y});
@@ -147,10 +147,12 @@ function Snake(){
     };
     // IF SNAKE COLLIDES WITH ITSELF
     this.checkForCollision = function() {
-        for (var i=0; i < this.tail.length -2; i++) {
+        for (let i=0; i < this.tail.length -2; i++) {
             if(this.x === this.tail[i].x && this.y === this.tail[i].y) {
                 
                 setState("gameover"); 
+            
+                return;
             }
         }
 
