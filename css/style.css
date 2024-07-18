@@ -51,6 +51,7 @@ canvas{
     color: white;
     width: 400px;
     height: 200px;
+
 }
 /*chat gpt 6line below*/
 #game-over{
@@ -67,8 +68,9 @@ canvas{
     color: white;
     border: 12px purple solid;
     border-radius: 8px;
-    
+     
     visibility: hidden;
+
    
 }
 
