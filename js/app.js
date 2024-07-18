@@ -23,11 +23,14 @@ function setState(state){
     gameState = state;
     if(state === "gameover"){
         gameMusicWhenPlaying.pause();
+        gameMusicWhenDie.pause();
         gameOverMenu.style.visibility = "visible";
         startMenu.style.visibility = "hidden";
+        
         document.getElementById("snake-length").innerText = snake.totalFruit - 2;
     } else if (state === "play"){
         gameMusicWhenPlaying.play();
+        gameMusicWhenDie.pause();
         gameOverMenu.style.visibility = "hidden";
         startMenu.style.visibility = "hidden";
 
@@ -35,6 +38,7 @@ function setState(state){
         startMenu.style.visibility = "visible";
         gameOverMenu.style.visibility = "hidden";
         gameMusicWhenPlaying.pause();
+        gameMusicWhenDie.play();
      
 } }
 
