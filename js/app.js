@@ -10,29 +10,35 @@ const columns = cvs.width/scale;
 let gameState;
 const startMenu = document.getElementById("start-menu");
 const gameOverMenu = document.getElementById("game-over");
-
+const gameMusicWhenPlaying = document.getElementById("game-music-while-playing");
+const gameMusicWhenDie = document.getElementById("game-music-when-die");
 
 //variable declaration
 let snake;
 let fruit; 
 let score;
 
-//Game progress gameover menu
+//Game progress gameover menu and game music while playing 
 function setState(state){
     gameState = state;
     if(state === "gameover"){
+        gameMusicWhenPlaying.pause();
         gameOverMenu.style.visibility = "visible";
         startMenu.style.visibility = "hidden";
-        document.getElementById("snake-length").innerText = snake.totalFruit - 4;
+        document.getElementById("snake-length").innerText = snake.totalFruit - 2;
     } else if (state === "play"){
+        gameMusicWhenPlaying.play();
         gameOverMenu.style.visibility = "hidden";
         startMenu.style.visibility = "hidden";
 
     }   else if (state === "start"){
         startMenu.style.visibility = "visible";
         gameOverMenu.style.visibility = "hidden";
+        gameMusicWhenPlaying.pause();
      
 } }
+
+
 
 
 
@@ -41,7 +47,7 @@ function setState(state){
 function restart(){
     snake.x = 240;
     snake.y = 220;
-    snake.totalFruit = 4;
+    snake.totalFruit = 2;
     snake.tail = [];
     for (let i = 0; i< snake.totalFruit; i++){
         snake.tail.push({ x: snake.x - i * scale, y: snake.y});
@@ -55,8 +61,12 @@ function Snake(){
     this.y = 0;
     this.xSpeed = scale*1;
     this.ySpeed = 0;
-    this.totalFruit = 4;
-    this.tail =Array(this.totalFruit).fill({x: this.x, y: this.y});
+    this.totalFruit = 2;
+    this.tail =[];
+    for (let i = 0; i< this.totalFruit; i++){
+        this.tail.push({ x: this.x - i *scale, y: this.y});
+    }
+    // above three lines original version that works 07/18/24 : Array(this.totalFruit).fill({x: this.x, y: this.y});
 
     //design of snake chat gpt generated design the snake out 
     this.draw = function() {
@@ -127,7 +137,7 @@ function Snake(){
     };
     // IF SNAKE COLLIDES WITH ITSELF
     this.checkForCollision = function() {
-        for (var i=0; i < this.tail.length -4; i++) {
+        for (var i=0; i < this.tail.length -2; i++) {
             if(this.x === this.tail[i].x && this.y === this.tail[i].y) {
                 
                 setState("gameover"); 
@@ -179,7 +189,7 @@ this.draw = function() {
             fruitPop.play();
         }
         snake.checkForCollision();
-        document.querySelector("#score").innerText = snake.totalFruit- 4;
+        document.querySelector("#score").innerText = snake.totalFruit- 2;
     }, 180);
     //snake is created moved and cleard every 180 
     }());
