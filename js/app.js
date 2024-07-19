@@ -186,7 +186,7 @@ function Fruit() {
         }
     }, 180);
 })();
-
+// got from google 
 document.body.onkeyup = function (e) {
     if (e.keyCode == 32) {
         restart();
