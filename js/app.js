@@ -24,6 +24,7 @@ function setState(state){
     gameState = state;
     if(state === "gameover"){
         gameMusicWhenPlaying.pause();
+        gameMusicWhenPlaying.currentTime = 0;
         gameOverMenu.style.visibility = "visible";
         startMenu.style.visibility = "hidden";
          if (!gameMusicWhenDie.paused){
@@ -51,11 +52,12 @@ function setState(state){
 
 
 
+
 //Restart funciton
 function restart(){
     snake.x = 240;
     snake.y = 220;
-    snake.totalFruit = 20;
+    snake.totalFruit = 2;
     snake.tail = [];
     for (let i = 0; i< snake.totalFruit; i++){
         snake.tail.push({ x: snake.x - i * scale, y: snake.y});
