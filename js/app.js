@@ -54,6 +54,12 @@ function restart() {
     gameMusicWhenDie.pause();
     gameMusicWhenDie.currentTime = 0;
     setState("play");
+
+    //set time delay before collision detection execute, next three
+    //line of code done by chat gpt. 
+    setTimeout(() => {
+        snake.canCollide = true;
+    }, 500);
 }
 
 function Snake() {
@@ -128,6 +134,8 @@ function Snake() {
     };
 
     this.checkForCollision = function () {
+        //line below done by chat gpt 
+        if (!this.canCollide) return;
         for (let i = 0; i < this.tail.length - 1; i++) {
             if (this.x === this.tail[i].x && this.y === this.tail[i].y) {
                 setState("gameover");
