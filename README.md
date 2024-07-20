@@ -137,6 +137,21 @@ The game will start when user press on any four keys ```Up, down, Left, Right```
 # Screenshot of the APP
 ![some alt text ](https://i.postimg.cc/ncM9KkNw/Screenshot-2024-07-19-at-7-38-43-PM.png)
 
+# Link of the game
+- https://main--celadon-cranachan-8d0264.netlify.app/  (GAME LINK)
+- play with cuation your feelings might get hurt. Du software Development ltd. is not responsible for any feeling damage, and is not liable for anything related to that. 
+## Cited Page 
+- https://openai.com/index/chatgpt/
+- https://developer.mozilla.org/en-US/
+- https://github.com/
+- https://fonts.google.com/
+- https://www.freecodecamp.org/news/how-to-build-a-snake-game-in-javascript/
+- https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout
+- https://www.youtube.com/
+
+
+
+
 
 
 
