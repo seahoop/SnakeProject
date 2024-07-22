@@ -135,6 +135,7 @@ The game will start when user press on any four keys ```Up, down, Left, Right```
 - Ready for Presentation
 
 # Screenshot of the APP
+
 ![some alt text ](https://i.postimg.cc/ncM9KkNw/Screenshot-2024-07-19-at-7-38-43-PM.png)
 
 # Link of the game
