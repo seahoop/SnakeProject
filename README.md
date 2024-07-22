@@ -1,8 +1,8 @@
 # Project Choice 
-Snake Project 
+Snake Project/Kepler-452B Terminator
 
 # Project Description
-The Snake Game is an exciting web game controlled by four keys on end users keyboard ```Up, down, Left, Right```. The Game features an extendible Snake starting at default as 4 blocks, the Snake will be caged in an square shaped arena which the size will be 20*20(refer to example below)
+The Kepler-452B Terminator is an exciting web game controlled by four keys on end users keyboard ```Up, down, Left, Right```. The Game features an extendible Snake starting at default as 4 blocks, the Snake will be caged in an square shaped arena which the size will be 20*20(refer to example below)
 
 ![some alt text](https://i.postimg.cc/jSpXmDrh/Screenshot-2024-07-12-at-11-53-02-AM.png)
 
