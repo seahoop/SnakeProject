@@ -2,11 +2,11 @@
 Snake Project/Kepler-452B Terminator
 
 # Project Description
-The Kepler-452B Terminator is an exciting web game controlled by four keys on end users keyboard ```Up, down, Left, Right```. The Game features an extendible Snake starting at default as 4 blocks, the Snake will be caged in an square shaped arena which the size will be 20*20(refer to example below)
+The Kepler-452B Terminator is an exciting web game controlled by four keys on end users keyboard ```Up, down, Left, Right```. The Game features an extendible Snake starting at default as 2 blocks, the Snake will be caged in an square shaped arena which the size will be 500*600(refer to example below)
 
 ![some alt text](https://i.postimg.cc/jSpXmDrh/Screenshot-2024-07-12-at-11-53-02-AM.png)
 
-The game will start when user press on any four keys ```Up, down, Left, Right```. Simultananeously the program will execute the pre-programmed action, which start randomly showing apple in random blocks one at an time. The end user will try to use ```Up, down, Left, Right``` to direct the snake to eat the apple. When succesfully comeplete the action of going through an apple, the apple will automatically dissapear and the snake will become one block longer. The user wins when all 20*20 arena is occupied by the Snakes Body, if the snake's head run into any part of the wall on each side of the arena. The user loses the Game and the game reset. 
+The game will start when user press on any four keys ```Up, down, Left, Right```. Simultananeously the program will execute the pre-programmed action, which start randomly showing apple in random blocks one at an time. The end user will try to use ```Up, down, Left, Right``` to direct the snake to eat the apple. When succesfully comeplete the action of going through an apple, the apple will automatically dissapear and the snake will become one block longer. The user wins when all 500*600 arena is occupied by the Snakes Body, if the snake's head run into any part of the wall on each side of the arena. The user loses the Game and the game reset. 
 
 
 # File Structure Of the Proposed Project 
@@ -48,7 +48,7 @@ The game will start when user press on any four keys ```Up, down, Left, Right```
 2. As a player, when I enter the game URL and gets directed to the game.  I want their to be clear direction/button to click so I can start the game. 
 3. As a player, if I direct the snake into any side of the wall in the arena, I want to be told that I have lost the game and show me how long or how many blocks my snake has grown to. I also want their to be an restart button for me to restart immediately.  
 4. As a player, if I win the game I want to be told that I have win the game and the game pause immediately. After the pause I want to be told how many blocks my snake has grown to. 
-5. As a player, when I press the start button I want the snake to be at an defuault position with four blocks in length and the first apple randomly appear in the 20*20 arena. 
+5. As a player, when I press the start button I want the snake to be at an defuault position with four blocks in length and the first apple randomly appear in the 500*600 arena. 
 6. As a player, I want the snake to move continouously till I press another command. 
 7. As a player, I want when an apple is eaten an new apple will randomly generate in another block of the arena. 
 8. the snake can not move back ward only forward, left and right. 
@@ -66,8 +66,8 @@ The game will start when user press on any four keys ```Up, down, Left, Right```
 # Pseudocode
 
 ### Global Variables 
-1. Arena Size = 20*20
-2. Defaulst-snake-length= 4
+1. Arena Size = 500*600
+2. Defaulst-snake-length= 2
 3. apple position random x, and random y 
 4. score = 0
 
