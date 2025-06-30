@@ -170,7 +170,7 @@ function Fruit() {
     fruit.randomLocation();
 
     setState("start");
-
+//chat gpt helped for the next 6 lines
     let speed = window.setInterval(() => {
         if (gameState === "play") {
             ctx.clearRect(0, 0, cvs.width, cvs.height);
@@ -186,7 +186,7 @@ function Fruit() {
         }
     }, 180);
 })();
-// got from google 
+// got from google keys
 document.body.onkeyup = function (e) {
     if (e.keyCode == 32) {
         restart();

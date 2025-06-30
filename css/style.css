@@ -18,13 +18,13 @@ body{
 
 #topic{
    
-    color: #0034f0;
+    color: blue;
     font-family: "Orbitron", sans-serif;
     text-align: center;
     letter-spacing: 9px;
     font-size: 2rem;
 
-    background-color: rgb(0, 186, 180);
+    background-color: lightblue;
     height: 200px;
     width: 400px;
     border: rgb(3, 172, 169) solid 9px;
@@ -66,7 +66,7 @@ canvas{
     font-size: 1rem;
     background-color: black;
     color: white;
-    border: 12px purple solid;
+    border: 12px black;
     border-radius: 8px;
      
     visibility: hidden;

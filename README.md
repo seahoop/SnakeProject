@@ -1,5 +1,9 @@
+# Link of the game
+- snakeproject1.netlify.app  (GAME LINK)
+- play with cuation your feelings might get hurt. Du software Development ltd. is not responsible for any feeling damage, and is not liable for anything related to that. 
+
 # Project Choice 
-Snake Project/Kepler-452B Terminator
+First Project at General Assembly Snake Project AKA Keplar 452B in memory of 5D Trump Tower
 
 # Project Description
 The Kepler-452B Terminator is an exciting web game controlled by four keys on end users keyboard ```Up, down, Left, Right```. The Game features an extendible Snake starting at default as 2 blocks, the Snake will be caged in an square shaped arena which the size will be 500*600(refer to example below)
@@ -138,9 +142,6 @@ The game will start when user press on any four keys ```Up, down, Left, Right```
 
 ![some alt text ](https://i.postimg.cc/ncM9KkNw/Screenshot-2024-07-19-at-7-38-43-PM.png)
 
-# Link of the game
-- https://main--celadon-cranachan-8d0264.netlify.app/  (GAME LINK)
-- play with cuation your feelings might get hurt. Du software Development ltd. is not responsible for any feeling damage, and is not liable for anything related to that. 
 ## Cited Page 
 - https://openai.com/index/chatgpt/
 - https://developer.mozilla.org/en-US/
