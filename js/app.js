@@ -16,6 +16,7 @@ gameMusicWhenPlaying.volume = 0.6;
 let snake;
 let fruit;
 let score = 0;
+let scoreAnimation = 0;
 
 function setState(state) {
     gameState = state;
@@ -51,6 +52,7 @@ function restart() {
         snake.tail.push({ x: snake.x - i * scale, y: snake.y });
     }
     score = 0;
+    scoreAnimation = 0;
     gameMusicWhenDie.pause();
     gameMusicWhenDie.currentTime = 0;
     setState("play");
@@ -74,11 +76,34 @@ function Snake() {
     }
 
     this.draw = function () {
-        ctx.fillStyle = "#5300E2";
+        // Draw snake body with gradient effect
         for (let i = 0; i < this.tail.length; i++) {
+            const alpha = 0.6 + (i / this.tail.length) * 0.4;
+            ctx.fillStyle = `rgba(83, 0, 226, ${alpha})`;
             ctx.fillRect(this.tail[i].x, this.tail[i].y, scale, scale);
+            
+            // Add glow effect
+            ctx.shadowColor = '#5300E2';
+            ctx.shadowBlur = 5;
+            ctx.strokeStyle = `rgba(83, 0, 226, ${alpha + 0.2})`;
+            ctx.lineWidth = 2;
+            ctx.strokeRect(this.tail[i].x, this.tail[i].y, scale, scale);
         }
+        
+        // Draw snake head with special effect
+        ctx.shadowColor = '#5300E2';
+        ctx.shadowBlur = 10;
+        ctx.fillStyle = "#5300E2";
         ctx.fillRect(this.x, this.y, scale, scale);
+        
+        // Add eyes to the head
+        ctx.shadowBlur = 0;
+        ctx.fillStyle = "#00ffff";
+        ctx.fillRect(this.x + 4, this.y + 4, 3, 3);
+        ctx.fillRect(this.x + 13, this.y + 4, 3, 3);
+        
+        // Reset shadow
+        ctx.shadowBlur = 0;
     };
 
     this.update = function () {
@@ -128,6 +153,7 @@ function Snake() {
         if (this.x === fruit.x && this.y === fruit.y) {
             this.totalFruit++;
             score++;
+            scoreAnimation = 10; // Trigger score animation
             return true;
         }
         return false;
@@ -148,6 +174,7 @@ function Snake() {
 function Fruit() {
     this.x;
     this.y;
+    this.pulse = 0;
 
     this.randomLocation = function () {
         this.x = (Math.floor(Math.random() * rows + 1) - 1) * scale;
@@ -155,12 +182,37 @@ function Fruit() {
     };
 
     this.draw = function () {
+        this.pulse += 0.1;
+        const pulseSize = Math.sin(this.pulse) * 2;
+        
+        // Draw fruit with glow effect
+        ctx.shadowColor = '#00DB41';
+        ctx.shadowBlur = 10 + pulseSize;
         ctx.fillStyle = "#00DB41";
         ctx.fillRect(this.x, this.y, scale, scale);
-        ctx.strokeStyle = "#000";
-        ctx.strokeRect(this.x, this.y, scale, scale);
+        
+        // Add border
+        ctx.shadowBlur = 0;
+        ctx.strokeStyle = "#00ff88";
         ctx.lineWidth = 2;
+        ctx.strokeRect(this.x, this.y, scale, scale);
+        
+        // Add shine effect
+        ctx.fillStyle = "rgba(255, 255, 255, 0.3)";
+        ctx.fillRect(this.x + 2, this.y + 2, 4, 4);
     };
+}
+
+function drawScore() {
+    const scoreElement = document.querySelector("#score");
+    if (scoreAnimation > 0) {
+        scoreElement.style.transform = `scale(${1 + scoreAnimation * 0.1})`;
+        scoreElement.style.color = "#00ff88";
+        scoreAnimation--;
+    } else {
+        scoreElement.style.transform = "scale(1)";
+        scoreElement.style.color = "#00ffff";
+    }
 }
 
 (function initSnake() {
@@ -183,9 +235,11 @@ function Fruit() {
             // chat gpt find out the bug line below 
             snake.checkForCollision();
             document.querySelector("#score").innerText = snake.totalFruit - 2;
+            drawScore();
         }
     }, 180);
 })();
+
 // got from google keys
 document.body.onkeyup = function (e) {
     if (e.keyCode == 32) {
